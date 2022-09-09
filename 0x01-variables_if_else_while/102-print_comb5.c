@@ -1,23 +1,32 @@
 #include <stdio.h>
 
 /**
- * main - print 00 to 99
+ * main - Prints all possible combinations of two two-digit numbers
  *
- * Return: zero
+ * Return: Always 0.
  */
 int main(void)
 {
-	int i;
+	int num1, num2;
 
-	for (i = 0; i <= 99; i++)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		putchar((i / 10) + '0');
-		putchar((i % 10) + '0');
-		if (i == 99)
-			break;
-		putchar(',');
-		putchar(' ');
+		for (num2 = num1 + 1; num2 <= 99; num2++)
+		{
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar(' ');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
+
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	putchar('\n');
+
 	return (0);
 }
