@@ -5,7 +5,7 @@
  *
  * Return: zero
  */
-int main(coid)
+int main(void)
 {
 	int i;
 
